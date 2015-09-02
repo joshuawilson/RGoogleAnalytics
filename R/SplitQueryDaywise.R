@@ -50,7 +50,7 @@ SplitQueryDaywise <- function(query.builder, token, delay) {
     inter.df <- data.frame()
     query.uri <- ToUri(query.builder, token)
     Sys.sleep(delay)
-    first.query <- GetDataFeed(query.uri)
+    first.query <- GetDataFeed(query.uri, T)
     first.query.df <- rbind(first.query.df, do.call(rbind, as.list(first.query$rows)))
     
     # Check if pagination is required in the query
